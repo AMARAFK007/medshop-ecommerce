@@ -1,10 +1,6 @@
+"use client";
+
 import React from 'react';
-import { 
-  CurrencyDollarIcon, 
-  ShoppingCartIcon, 
-  UserGroupIcon, 
-  RefreshIcon 
-} from '@heroicons/react/outline';
 
 export default function DashboardStats() {
   // Sample data - in a real app, this would come from an API or database
@@ -15,7 +11,6 @@ export default function DashboardStats() {
       value: '$24,521.00',
       change: '+14.2%',
       changeType: 'increase',
-      icon: CurrencyDollarIcon,
       bgColor: 'bg-green-100',
       textColor: 'text-green-600',
     },
@@ -25,7 +20,6 @@ export default function DashboardStats() {
       value: '982',
       change: '+7.3%',
       changeType: 'increase',
-      icon: ShoppingCartIcon,
       bgColor: 'bg-blue-100',
       textColor: 'text-blue-600',
     },
@@ -35,7 +29,6 @@ export default function DashboardStats() {
       value: '1,682',
       change: '+12.9%',
       changeType: 'increase',
-      icon: UserGroupIcon,
       bgColor: 'bg-purple-100',
       textColor: 'text-purple-600',
     },
@@ -45,7 +38,6 @@ export default function DashboardStats() {
       value: '1.2%',
       change: '-0.5%',
       changeType: 'decrease',
-      icon: RefreshIcon,
       bgColor: 'bg-yellow-100',
       textColor: 'text-yellow-600',
     },
@@ -58,7 +50,7 @@ export default function DashboardStats() {
           <div className="p-5">
             <div className="flex items-center">
               <div className={`flex-shrink-0 ${item.bgColor} rounded-md p-3`}>
-                <item.icon className={`h-6 w-6 ${item.textColor}`} aria-hidden="true" />
+                <span className={`h-6 w-6 ${item.textColor}`} aria-hidden="true">📊</span>
               </div>
               <div className="ml-5 w-0 flex-1">
                 <dl>
