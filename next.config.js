@@ -11,8 +11,10 @@ const nextConfig = {
   },
   // Improve static export
   trailingSlash: true,
-  // Important: disable any experimental options that could cause issues
-  experimental: {}
+  // Disable async functions to ensure proper static export
+  experimental: {
+    appDir: false
+  }
 };
 
 module.exports = nextConfig; 

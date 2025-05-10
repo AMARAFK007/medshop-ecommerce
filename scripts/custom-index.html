@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedShop E-Commerce</title>
+  <link rel="stylesheet" href="/_next/static/css/app/layout.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .header {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 15px 0;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #3b82f6;
+      text-decoration: none;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 0;
+    }
+    .hero h1 {
+      font-size: 48px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 20px;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #3b82f6;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #2563eb;
+    }
+    .featured {
+      padding: 40px 0;
+    }
+    .featured h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .product {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .product-img {
+      height: 200px;
+      background-color: #e6f2ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-info {
+      padding: 20px;
+    }
+    .product-category {
+      color: #3b82f6;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .product-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .product-price {
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    .product-btn {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">MedShop</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>MedShop E-Commerce</h1>
+        <p>Your trusted online pharmacy for all your healthcare needs</p>
+        <a href="/products/" class="btn">Browse Products</a>
+      </div>
+    </section>
+
+    <section class="featured">
+      <div class="container">
+        <h2>Featured Products</h2>
+        <div class="products">
+          <div class="product">
+            <div class="product-img">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <div class="product-info">
+              <div class="product-category">OTC Medicines</div>
+              <h3 class="product-name">Paracetamol 500mg</h3>
+              <div class="product-price">$5.99</div>
+              <button class="product-btn">Add to Cart</button>
+            </div>
+          </div>
+          
+          <div class="product">
+            <div class="product-img">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Medical Devices</div>
+              <h3 class="product-name">Digital Blood Pressure Monitor</h3>
+              <div class="product-price">$49.99</div>
+              <button class="product-btn">Add to Cart</button>
+            </div>
+          </div>
+          
+          <div class="product">
+            <div class="product-img">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Wellness Products</div>
+              <h3 class="product-name">Vitamin C 1000mg</h3>
+              <div class="product-price">$12.99</div>
+              <button class="product-btn">Add to Cart</button>
+            </div>
+          </div>
+          
+          <div class="product">
+            <div class="product-img">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Personal Care</div>
+              <h3 class="product-name">Hand Sanitizer 500ml</h3>
+              <div class="product-price">$4.99</div>
+              <button class="product-btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 MedShop E-Commerce. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html> 

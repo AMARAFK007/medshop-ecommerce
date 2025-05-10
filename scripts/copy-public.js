@@ -8,6 +8,7 @@ const path = require('path');
 // Define directories
 const publicDir = path.join(process.cwd(), 'public');
 const outDir = path.join(process.cwd(), 'out');
+const customIndexPath = path.join(process.cwd(), 'scripts', 'custom-index.html');
 
 console.log('Starting post-build process...');
 console.log(`Copying files from ${publicDir} to ${outDir}`);
@@ -67,6 +68,12 @@ try {
   // Create 404.html from index.html (for SPA routing)
   const indexPath = path.join(outDir, 'index.html');
   const notFoundPath = path.join(outDir, '404.html');
+  
+  // Use custom index.html if available
+  if (fs.existsSync(customIndexPath)) {
+    console.log('Using custom index.html file');
+    copyFile(customIndexPath, indexPath);
+  }
   
   if (fs.existsSync(indexPath)) {
     copyFile(indexPath, notFoundPath);

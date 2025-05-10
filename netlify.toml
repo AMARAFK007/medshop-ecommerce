@@ -6,10 +6,6 @@
   NODE_VERSION = "18"
   NPM_VERSION = "9"
 
-# Force trailing slashes
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
 # Handle all routes for client-side navigation
 [[redirects]]
   from = "/*"
