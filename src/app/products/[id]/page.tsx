@@ -3,13 +3,20 @@ import Link from 'next/link';
 import ProductReviews from '@/components/products/ProductReviews';
 import RelatedProducts from '@/components/products/RelatedProducts';
 
-interface ProductPageProps {
-  params: {
-    id: string;
-  };
+// Generate static paths at build time
+export function generateStaticParams() {
+  // In a real app, this would fetch from an API or database
+  // Here we're hardcoding some product IDs for demonstration
+  return [
+    { id: 'p1' },
+    { id: 'p2' },
+    { id: 'p3' },
+    { id: 'p4' },
+    { id: 'p5' }
+  ];
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
+export default function ProductPage({ params }: { params: { id: string } }) {
   // In a real app, this data would come from an API or database based on params.id
   const product = {
     id: params.id,
