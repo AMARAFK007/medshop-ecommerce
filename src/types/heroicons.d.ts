@@ -1,0 +1,39 @@
+declare module '@heroicons/react/24/outline' {
+  export const ShoppingCartIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const UserIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const MagnifyingGlassIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const Bars3Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const XMarkIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const HomeIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const CubeIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const UserGroupIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const ChartBarIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const CogIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const BellIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const UserCircleIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const MenuIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const XIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const SearchIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const CurrencyDollarIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const RefreshIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+}
+
+declare module '@heroicons/react/outline' {
+  export const ShoppingCartIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const UserIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const MagnifyingGlassIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const Bars3Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const XMarkIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const HomeIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const CubeIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const UserGroupIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const ChartBarIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const CogIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const BellIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const UserCircleIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const MenuIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const XIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const SearchIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const CurrencyDollarIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  export const RefreshIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+} 
