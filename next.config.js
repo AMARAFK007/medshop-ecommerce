@@ -9,6 +9,8 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // Improve static export
+  trailingSlash: true,
   // Important: disable any experimental options that could cause issues
   experimental: {}
 };

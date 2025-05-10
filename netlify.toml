@@ -10,7 +10,7 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# Handle route redirects - using splat syntax to catch all paths
+# Handle all routes for client-side navigation
 [[redirects]]
   from = "/*"
   to = "/index.html"
