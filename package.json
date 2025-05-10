@@ -4,12 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "postbuild": "if exist out (xcopy /s /y public\\* out\\)",
+    "build": "next build && node ./scripts/copy-public.js",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next build",
-    "deploy:netlify": "netlify deploy --prod --dir=out"
+    "lint": "next lint"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
