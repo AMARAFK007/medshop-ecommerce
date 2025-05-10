@@ -1,11 +1,10 @@
 [build]
-  command = "npm run build"
+  command = "chmod +x netlify-build.sh && ./netlify-build.sh"
   publish = "out"
 
 [build.environment]
   NODE_VERSION = "18"
   NPM_VERSION = "9"
-  NEXT_TELEMETRY_DISABLED = "1"
 
 # Force trailing slashes
 [[plugins]]
