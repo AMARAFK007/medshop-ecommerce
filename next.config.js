@@ -4,14 +4,18 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ['localhost'],
-    unoptimized: true, // For static export compatibility
+    unoptimized: true, // Required for static export
   },
-  // Enabling static exports for Netlify
+  // Set output to export for static site generation
   output: 'export',
-  // Setting a basePath in case the site is not deployed at the root
-  // basePath: '',
-  // Disable trailing slashes to match with Netlify routing
+  // Disable trailing slashes to match Netlify routing
   trailingSlash: false,
+  // Disable image optimization for static export
+  experimental: {
+    images: {
+      allowFutureImage: true
+    }
+  }
 };
 
 module.exports = nextConfig; 
