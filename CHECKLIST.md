@@ -10,16 +10,16 @@
 - Enhanced UI with hover effects and animations
 - Set up localStorage for cart persistence
 - Fixed blank page issue during deployment
+- Improved mobile responsiveness with mobile menu and better layouts
+- Enhanced product filtering with category filters and search functionality
+- Refined cart UI with quantity controls and item management
+- Optimized image loading and performance with lazy loading
 
 ## In Progress
-- Improving mobile responsiveness for all pages
-- Enhancing product filtering functionality
-- Refining cart UI and interaction experience
-- Optimizing image loading and performance
+- Implementing checkout process
+- Developing user authentication system
 
 ## To Do Tasks
-- Implement checkout process
-- Add user authentication system
 - Create product detail pages
 - Set up proper API routes for product data
 - Implement search functionality
