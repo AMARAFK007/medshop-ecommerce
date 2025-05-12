@@ -2,6 +2,10 @@
 
 A comprehensive e-commerce website for a medicine shop with both customer-facing features and admin panel.
 
+## Recent Updates
+
+- **2023-12-01**: Fixed netlify.toml configuration for proper static site deployment with Next.js
+
 ## Features
 
 ### Customer Features
