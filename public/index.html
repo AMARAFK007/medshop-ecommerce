@@ -3,61 +3,367 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MedShop E-Commerce</title>
+  <meta name="description" content="MedShop - Your Online Medicine Store">
+  <title>MedShop - Your Online Medicine Store</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #60a5fa;
+      --secondary: #10b981;
+      --secondary-dark: #059669;
+      --accent: #f59e0b;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+      --surface: #ffffff;
+      --surface-2: #f1f5f9;
+    }
+    
+    * {
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      text-align: center;
-      background-color: #f9fafb;
+      box-sizing: border-box;
     }
-    .container {
-      max-width: 800px;
-      padding: 2rem;
-      background-color: white;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      color: #3b82f6;
-      margin-bottom: 1.5rem;
-    }
-    p {
-      margin-bottom: 1.5rem;
-      color: #4b5563;
+    
+    body {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--dark);
+      background-color: var(--light);
       line-height: 1.6;
     }
-    .loading {
-      display: inline-block;
-      width: 50px;
-      height: 50px;
-      border: 3px solid rgba(59, 130, 246, 0.3);
-      border-radius: 50%;
-      border-top-color: #3b82f6;
-      animation: spin 1s ease-in-out infinite;
+    
+    a {
+      text-decoration: none;
+      color: inherit;
     }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    .header {
+      background-color: var(--surface);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+      width: 100%;
+      z-index: 1000;
+    }
+    
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo i {
+      margin-right: 8px;
+      font-size: 28px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .nav-link {
+      font-weight: 500;
+      position: relative;
+      padding: 5px 0;
+    }
+    
+    .header-actions {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    
+    .header-icon {
+      font-size: 20px;
+      color: var(--dark);
+      position: relative;
+    }
+    
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: var(--primary);
+      color: white;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 10px;
+      font-weight: 500;
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle, rgba(96,165,250,0.05) 0%, rgba(37,99,235,0.1) 100%);
+    }
+    
+    .hero-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      background: linear-gradient(to right, var(--primary-dark), var(--primary-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      color: var(--gray);
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-align: center;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+      box-shadow: 0 5px 15px rgba(37,99,235,0.3);
+    }
+    
+    .btn-secondary {
+      background-color: var(--surface);
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      margin-left: 15px;
+    }
+    
+    /* Featured Products */
+    .products-section {
+      padding: 80px 0;
+      background-color: white;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-title h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+    
+    .section-title p {
+      font-size: 18px;
+      color: var(--gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+    
+    .product-img {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+    }
+    
+    .product-info {
+      padding: 20px;
+    }
+    
+    .product-category {
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    
+    .product-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .product-price {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+    
+    .product-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: var(--primary);
+      color: white;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 40px 0 20px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>MedShop E-Commerce</h1>
-    <p>Loading your medical e-commerce experience...</p>
-    <div class="loading"></div>
-    <p>If the page doesn't load automatically, <a href="/">click here</a>.</p>
-  </div>
-  <script>
-    // Redirect to the app after a short delay
-    setTimeout(() => {
-      window.location.href = '/';
-    }, 3000);
-  </script>
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="/" class="logo">
+          <i class="fas fa-heartbeat"></i> MedShop
+        </a>
+        <nav class="nav-links">
+          <a href="#" class="nav-link">Home</a>
+          <a href="#" class="nav-link">Products</a>
+          <a href="#" class="nav-link">Categories</a>
+          <a href="#" class="nav-link">About</a>
+          <a href="#" class="nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <a href="#" class="header-icon"><i class="fas fa-search"></i></a>
+          <a href="#" class="header-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+          </a>
+          <a href="#" class="header-icon"><i class="fas fa-user"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Your Trusted Healthcare Partner</h1>
+        <p>Discover premium pharmaceutical products and healthcare essentials delivered right to your doorstep.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-primary">Browse Products</a>
+          <a href="#" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Featured Products</h2>
+        <p>Browse our selection of top-selling healthcare products</p>
+      </div>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-img">
+            <i class="fas fa-prescription-bottle-alt" style="font-size: 48px; color: var(--primary);"></i>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Pain Relief</div>
+            <h3 class="product-name">Paracetamol 500mg</h3>
+            <div class="product-price">$5.99</div>
+            <button class="product-btn">Add to Cart</button>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-img">
+            <i class="fas fa-stethoscope" style="font-size: 48px; color: var(--primary);"></i>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Medical Devices</div>
+            <h3 class="product-name">Digital Blood Pressure Monitor</h3>
+            <div class="product-price">$49.99</div>
+            <button class="product-btn">Add to Cart</button>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-img">
+            <i class="fas fa-capsules" style="font-size: 48px; color: var(--primary);"></i>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Vitamins</div>
+            <h3 class="product-name">Vitamin C 1000mg</h3>
+            <div class="product-price">$12.99</div>
+            <button class="product-btn">Add to Cart</button>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-img">
+            <i class="fas fa-pump-medical" style="font-size: 48px; color: var(--primary);"></i>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Personal Care</div>
+            <h3 class="product-name">Hand Sanitizer 500ml</h3>
+            <div class="product-price">$4.99</div>
+            <button class="product-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 MedShop E-Commerce. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html> 

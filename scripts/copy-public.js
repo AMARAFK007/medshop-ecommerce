@@ -8,7 +8,6 @@ const path = require('path');
 // Define directories
 const publicDir = path.join(process.cwd(), 'public');
 const outDir = path.join(process.cwd(), 'out');
-const customIndexPath = path.join(process.cwd(), 'scripts', 'custom-index.html');
 
 console.log('Starting post-build process...');
 console.log(`Copying files from ${publicDir} to ${outDir}`);
@@ -69,16 +68,21 @@ try {
   const indexPath = path.join(outDir, 'index.html');
   const notFoundPath = path.join(outDir, '404.html');
   
-  // Use custom index.html if available
-  if (fs.existsSync(customIndexPath)) {
-    console.log('Using custom index.html file');
-    copyFile(customIndexPath, indexPath);
-  }
-  
+  // Ensure index.html is in the output directory
   if (fs.existsSync(indexPath)) {
     copyFile(indexPath, notFoundPath);
   } else {
     console.log('No index.html found in output directory');
+    
+    // If no index.html exists in output, copy the one from public
+    const publicIndexPath = path.join(publicDir, 'index.html');
+    if (fs.existsSync(publicIndexPath)) {
+      console.log('Copying index.html from public directory');
+      copyFile(publicIndexPath, indexPath);
+      copyFile(publicIndexPath, notFoundPath);
+    } else {
+      console.log('No index.html found in public directory');
+    }
   }
   
   console.log('Post-build process completed successfully!');
