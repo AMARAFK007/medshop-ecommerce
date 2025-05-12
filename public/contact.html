@@ -620,6 +620,32 @@
   </style>
 </head>
 <body>
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cart-modal">
+    <div class="cart-header">
+      <h3 class="cart-title">Your Cart</h3>
+      <button class="close-cart" id="close-cart">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <div class="cart-empty" id="cart-empty">
+        <i class="fas fa-shopping-cart"></i>
+        <p>Your cart is empty</p>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total-amount">$0.00</span>
+      </div>
+      <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
   <!-- Loading Animation -->
   <div class="loading" id="loading">
     <div class="loading-spinner"></div>
@@ -767,10 +793,12 @@
       const mobileMenuOpen = document.getElementById('mobile-menu-open');
       const mobileMenuClose = document.getElementById('mobile-menu-close');
       const navLinks = document.getElementById('nav-links');
+      const overlay = document.getElementById('overlay');
       
       if (mobileMenuOpen) {
         mobileMenuOpen.addEventListener('click', function() {
           navLinks.classList.add('open');
+          if (overlay) overlay.classList.add('show');
           document.body.style.overflow = 'hidden';
         });
       }
@@ -778,6 +806,7 @@
       if (mobileMenuClose) {
         mobileMenuClose.addEventListener('click', function() {
           navLinks.classList.remove('open');
+          if (overlay) overlay.classList.remove('show');
           document.body.style.overflow = '';
         });
       }
@@ -796,15 +825,18 @@
           
           // Get form data
           const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
+            from_name: document.getElementById('name').value,
+            from_email: document.getElementById('email').value,
             subject: document.getElementById('subject').value,
             message: document.getElementById('message').value,
           };
           
+          console.log('Sending email with data:', formData);
+          
           // Send email using EmailJS
           emailjs.send('service_cmwwacj', 'template_c1c7jnb', formData)
             .then(function(response) {
+              console.log('Email sent successfully:', response);
               // Hide loading
               document.getElementById('loading').classList.add('hidden');
               
@@ -821,6 +853,7 @@
               }, 5000);
             })
             .catch(function(error) {
+              console.error('EmailJS error:', error);
               // Hide loading
               document.getElementById('loading').classList.add('hidden');
               
@@ -832,8 +865,6 @@
               setTimeout(function() {
                 errorMessage.style.display = 'none';
               }, 5000);
-              
-              console.error('EmailJS error:', error);
             });
         });
       }
@@ -884,6 +915,37 @@
           const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0);
           cartCount.textContent = cartItemCount;
         }
+      }
+      
+      // Cart functionality
+      const cartIcon = document.getElementById('cart-icon');
+      const cartModal = document.getElementById('cart-modal');
+      const closeCart = document.getElementById('close-cart');
+      
+      if (cartIcon && cartModal) {
+        cartIcon.addEventListener('click', function(e) {
+          e.preventDefault();
+          cartModal.classList.add('open');
+          if (overlay) overlay.classList.add('show');
+          document.body.style.overflow = 'hidden';
+        });
+      }
+      
+      if (closeCart) {
+        closeCart.addEventListener('click', function() {
+          cartModal.classList.remove('open');
+          if (overlay) overlay.classList.remove('show');
+          document.body.style.overflow = '';
+        });
+      }
+      
+      if (overlay) {
+        overlay.addEventListener('click', function() {
+          if (cartModal) cartModal.classList.remove('open');
+          if (navLinks) navLinks.classList.remove('open');
+          overlay.classList.remove('show');
+          document.body.style.overflow = '';
+        });
       }
     });
   </script>
