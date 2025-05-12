@@ -101,7 +101,7 @@ There are two ways to deploy this project to Netlify:
 2. Log in to Netlify and click "New site from Git"
 3. Choose your GitHub repository
 4. Set build command to `npm run build`
-5. Set publish directory to `.next`
+5. Set publish directory to `out`
 6. Add environment variables if needed
 7. Click "Deploy site"
 
