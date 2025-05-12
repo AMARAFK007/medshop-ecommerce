@@ -11,9 +11,9 @@ const nextConfig = {
   },
   // Improve static export
   trailingSlash: true,
-  // Disable async functions to ensure proper static export
+  // Enable the app directory
   experimental: {
-    appDir: false
+    appDir: true
   }
 };
 

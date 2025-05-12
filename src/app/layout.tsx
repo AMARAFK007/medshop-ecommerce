@@ -19,6 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body className={inter.className}>
         <div className="min-h-screen flex flex-col">
           <Header />
@@ -27,6 +31,12 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
+        <script dangerouslySetInnerHTML={{ 
+          __html: `
+            // Prevent FOUC (Flash of unstyled content)
+            document.documentElement.classList.add('js-loaded');
+          `
+        }} />
       </body>
     </html>
   );
